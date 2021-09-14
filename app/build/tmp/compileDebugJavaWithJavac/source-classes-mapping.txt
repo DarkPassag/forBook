@@ -1,0 +1,11 @@
+database/CrimeDatabase_Impl.java
+ database.CrimeDatabase_Impl
+ database.CrimeDatabase_Impl$1
+database/CrimeDao_Impl.java
+ database.CrimeDao_Impl
+ database.CrimeDao_Impl$1
+ database.CrimeDao_Impl$2
+ database.CrimeDao_Impl$3
+ database.CrimeDao_Impl$4
+com/example/criminalintent/BuildConfig.java
+ com.example.criminalintent.BuildConfig

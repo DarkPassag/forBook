@@ -12,6 +12,7 @@ import java.util.*
 
 private const val ARG_DATE = "date"
 class DatePickerFragment: DialogFragment() {
+    private lateinit var newStringfromBranch: String
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         val dateListener =
