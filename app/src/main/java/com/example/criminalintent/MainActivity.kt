@@ -29,5 +29,10 @@ class MainActivity : AppCompatActivity(), Callbacks
             supportFragmentManager.beginTransaction().replace(R.id.fragment_container, fragment).addToBackStack(null).commit()
         }
 
+        override fun newCrime() {
+            val fragment = CrimeFragment.newInstanceWithoutArgs()
+            supportFragmentManager.beginTransaction().replace(R.id.fragment_container, fragment).commit()
+        }
+
 
 }

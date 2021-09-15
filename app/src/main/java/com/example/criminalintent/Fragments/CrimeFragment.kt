@@ -38,10 +38,9 @@ class CrimeFragment: Fragment(), DateSelected, TimeSelected {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         crime = Crime()
-        val crimeID: UUID = arguments?.getSerializable(ARG_CRIME_ID) as UUID
-        crimeDetailViewModel.loadCrime(crimeID)
-    }
 
+
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -110,16 +109,23 @@ class CrimeFragment: Fragment(), DateSelected, TimeSelected {
     }
 
     companion object {
-         fun newInstance(crimeID:UUID) :
-                 CrimeFragment {
-             val args = Bundle().apply {
-                 putSerializable(ARG_CRIME_ID, crimeID)
-             }
-             return CrimeFragment().apply {
-                 arguments = args
-             }
-         }
+        fun newInstance(crimeID: UUID):
+                CrimeFragment {
+            val args = Bundle().apply {
+                putSerializable(ARG_CRIME_ID, crimeID)
+            }
+            return CrimeFragment().apply {
+                arguments = args
+            }
+        }
+
+
+        fun newInstanceWithoutArgs(): CrimeFragment {
+            return CrimeFragment()
+        }
     }
+
+
 
     override fun onStop() {
         super.onStop()

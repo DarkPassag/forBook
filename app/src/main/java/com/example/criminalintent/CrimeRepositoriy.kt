@@ -15,7 +15,7 @@ class CrimeRepositoriy private constructor(context: Context){
         .databaseBuilder(context.applicationContext,
         CrimeDatabase::class.java,
         DATABASE_NAME)
-        .createFromAsset("crime-database.db")
+//        .createFromAsset("crime-database.db")
         .build()
     private val crimeDao = database.crimeDao()
     private val executor = Executors.newSingleThreadExecutor()
@@ -24,17 +24,18 @@ class CrimeRepositoriy private constructor(context: Context){
 
     fun getCrime(id: UUID): LiveData<Crime?> = crimeDao.getCrime(id)
 
-    fun updateCrime(crime: Crime){
-        executor.execute{
+    fun updateCrime(crime: Crime) {
+        executor.execute {
             crimeDao.updateCrime(crime)
         }
+    }
 
         fun addCrime(crime: Crime){
             executor.execute {
                 crimeDao.addCrime(crime)
             }
         }
-    }
+
 
 
     companion object{

@@ -7,6 +7,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.ImageView
 
 import android.widget.TextView
@@ -62,6 +63,20 @@ class CrimeListFragment: Fragment() {
         crimeListViewModel.crimeListLiveData.observe(viewLifecycleOwner, Observer
         { it ->it.let {
             crimes = it
+            if(crimes.isEmpty()){
+               val buttonNewCrime = view.findViewById<Button>(R.id.newCrime)
+                val textView = view.findViewById<TextView>(R.id.EmptyText)
+                textView.visibility = View.VISIBLE
+                buttonNewCrime.visibility = View.VISIBLE
+
+            }
+            val buttonNewCrime = view.findViewById<Button>(R.id.newCrime)
+            buttonNewCrime.setOnClickListener {
+                val crime = Crime()
+                crimeListViewModel.addCrime(crime)
+                callbacks?.onCrimeSelected(crime.id)
+                callbacks?.newCrime()
+            }
             Log.i(TAG, "Got crimes ${crimes.size}")
             updateUI(crimes)} })
     }
@@ -93,6 +108,7 @@ class CrimeListFragment: Fragment() {
         }
 
         override fun onClick(v: View) {
+
             callbacks?.onCrimeSelected(crime.id)
 
         }
