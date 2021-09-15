@@ -1832,6 +1832,7 @@ id ALT
 id BOTTOM_END
 id BOTTOM_START
 id CTRL
+id EmptyText
 id FUNCTION
 id META
 id NO_DEBUG
@@ -2129,6 +2130,7 @@ id navigation_header_container
 id never
 id neverCompleteToEnd
 id neverCompleteToStart
+id newCrime
 id noScroll
 id noState
 id none
@@ -2264,7 +2266,6 @@ id textinput_placeholder
 id textinput_prefix_text
 id textinput_suffix_text
 id time
-id time_button
 id title
 id titleDividerNoCustom
 id title_template
@@ -2487,6 +2488,7 @@ string abc_searchview_description_voice
 string abc_shareactionprovider_share_with
 string abc_shareactionprovider_share_with_application
 string abc_toolbar_collapse_description
+string addnewcrime
 string app_name
 string appbar_scrolling_view_behavior
 string bottom_sheet_behavior
@@ -2500,6 +2502,7 @@ string crime_details_label
 string crime_solved_label
 string crime_title_hint
 string crime_title_label
+string crimelistisempty
 string error_icon_content_description
 string exposed_dropdown_menu_content_description
 string fab_transformation_scrim_behavior
