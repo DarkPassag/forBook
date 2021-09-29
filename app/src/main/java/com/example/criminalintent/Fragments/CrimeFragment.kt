@@ -167,9 +167,22 @@ class CrimeFragment : Fragment(), DatePickerFragment.Callbacks {
 
         callButton.apply {
             val pickContactIntent = Intent(Intent.ACTION_PICK, ContactsContract.CommonDataKinds.Phone.CONTENT_URI)
+            val callIntent = Intent(Intent.ACTION_CALL, Uri.parse("tell: ${this.text}"))
+
             setOnClickListener {
-                startActivityForResult(pickContactIntent, REQUEST_PHONE )
+                if(callButton.text.contains("8") ){
+                startActivity(callIntent)
             }
+                else startActivityForResult(pickContactIntent, REQUEST_PHONE )
+
+//
+
+
+
+            }
+
+
+
 
         }
 
