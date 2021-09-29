@@ -11,52 +11,49 @@ import java.util.*
 
 
 private const val ARG_DATE = "date"
-class DatePickerFragment: DialogFragment() {
-    private lateinit var newStringfromBranch: String
+
+class DatePickerFragment : DialogFragment() {
+
+    interface Callbacks {
+        fun onDateSelected(date: Date)
+    }
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
-        val dateListener =
-            DatePickerDialog.OnDateSetListener { _: DatePicker, year: Int, month: Int, day: Int ->
-                val resultDate: Date = GregorianCalendar(year, month, day).time
+        val dateListener = DatePickerDialog.OnDateSetListener {
+                _: DatePicker, year: Int, month: Int, day: Int ->
 
-                targetFragment?.let { fragment ->
-                    (fragment as DateSelected).onDateSelected(resultDate)
-                }
-            }
-                val date = arguments?.getSerializable(ARG_DATE) as Date
-                val calendar = Calendar.getInstance()
-                calendar.time = date
-                val initialYear = calendar.get(Calendar.YEAR)
-                val initialMonth = calendar.get(Calendar.MONTH)
-                val initialDay = calendar.get(Calendar.DAY_OF_MONTH)
+            val resultDate = GregorianCalendar(year, month, day).time
 
-
-                return DatePickerDialog(requireContext(),
-                    dateListener,
-                    initialDay,
-                    initialMonth,
-                    initialYear,
-
-                )
-            }
-
-        companion object {
-
-            fun newInstance(date: Date): DatePickerFragment {
-                val args = Bundle().apply {
-                    putSerializable(ARG_DATE, date)
-                }
-
-                return DatePickerFragment().apply {
-                    arguments = args
-                }
+            targetFragment?.let { fragment ->
+                (fragment as Callbacks).onDateSelected(resultDate)
             }
         }
 
-    override fun onStop() {
-        super.onStop()
-        TimePickerFragment.newInstance().apply {
-            show(this@DatePickerFragment.parentFragmentManager, "DataPickerFragment")
+        val date = arguments?.getSerializable(ARG_DATE) as Date
+        val calendar = Calendar.getInstance()
+        calendar.time = date
+        val initialYear = calendar.get(Calendar.YEAR)
+        val initialMonth = calendar.get(Calendar.MONTH)
+        val initialDate = calendar.get(Calendar.DAY_OF_MONTH)
+
+        return DatePickerDialog(
+            requireContext(),
+            dateListener,
+            initialYear,
+            initialMonth,
+            initialDate
+        )
+    }
+
+    companion object {
+        fun newInstance(date: Date): DatePickerFragment {
+            val args = Bundle().apply {
+                putSerializable(ARG_DATE, date)
+            }
+
+            return DatePickerFragment().apply {
+                arguments = args
+            }
         }
     }
-    }
+}

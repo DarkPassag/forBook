@@ -4,10 +4,9 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="16dp"
-    >
-    <TextView
+    android:layout_margin="16dp">
 
+    <TextView
         style="?android:listSeparatorTextViewStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -29,18 +28,41 @@
         android:layout_height="wrap_content"
         tools:text="Web Now 14 11:56 EST 2018" />
 
-    <LinearLayout
+        <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-        <CheckBox
+            <CheckBox
             android:id="@+id/crime_sloved"
             android:layout_width="240dp"
             android:layout_height="wrap_content"
             android:text="@string/crime_solved_label" />
 
-    </LinearLayout>
+
+        </LinearLayout>
+
+    <Button
+        android:layout_marginTop="8dp"
+        android:id="@+id/chooseSuspect"
+        android:layout_width="match_parent"
+        android:textSize="16sp"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+        android:text="@string/chooseSuspect"
+        tools:text="Choose suspect"/>
+
+    <Button
+        android:layout_marginTop="8dp"
+        android:id="@+id/sendSuspect"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:text="@string/sendSuspect"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+        android:textSize="16sp"
+        tools:text="Send suspect"/>
 
 
 </LinearLayout>

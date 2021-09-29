@@ -5,23 +5,24 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Transformations
 import androidx.lifecycle.ViewModel
 import com.example.criminalintent.Crime
-import com.example.criminalintent.CrimeRepositoriy
+import com.example.criminalintent.CrimeRepository
 import java.util.*
 
-class CrimeDetailViewModel(): ViewModel() {
+class CrimeDetailViewModel : ViewModel() {
 
-    private val crimeRepository = CrimeRepositoriy.get()
+    private val crimeRepository = CrimeRepository.get()
     private val crimeIdLiveData = MutableLiveData<UUID>()
 
-    val crimeLiveData: LiveData<Crime?> = Transformations.switchMap(crimeIdLiveData){
-        crimeId -> crimeRepository.getCrime(crimeId)
-    }
-    fun loadCrime(crimeId: UUID){
+    val crimeLiveData: LiveData<Crime?> =
+        Transformations.switchMap(crimeIdLiveData) { crimeId ->
+            crimeRepository.getCrime(crimeId)
+        }
+
+    fun loadCrime(crimeId: UUID) {
         crimeIdLiveData.value = crimeId
     }
 
-    fun saveCrime(crime: Crime){
+    fun saveCrime(crime: Crime) {
         crimeRepository.updateCrime(crime)
     }
-
 }
