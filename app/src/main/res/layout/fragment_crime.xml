@@ -64,5 +64,16 @@
         android:textSize="16sp"
         tools:text="Send suspect"/>
 
+    <Button
+        android:id="@+id/callCrimer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:textSize="16sp"
+        android:textColor="@color/black"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+        android:text="@string/call"/>
+
+
 
 </LinearLayout>

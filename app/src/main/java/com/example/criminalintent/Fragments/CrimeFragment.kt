@@ -28,7 +28,7 @@ import com.example.criminalintent.ViewModels.CrimeDetailViewModel
 import com.example.criminalintent.Interfaces.DateSelected
 import com.example.criminalintent.Interfaces.TimeSelected
 import com.example.criminalintent.R
-
+import java.net.URI
 
 
 private const val TAG = "CrimeFragment"
@@ -36,6 +36,7 @@ private const val ARG_CRIME_ID = "crime_id"
 private const val DIALOG_DATE = "DialogDate"
 private const val REQUEST_DATE = 0
 private const val REQUEST_CONTACT = 1
+private const val REQUEST_PHONE = 2
 private const val DATE_FORMAT = "EEE, MM, dd"
 
 class CrimeFragment : Fragment(), DatePickerFragment.Callbacks {
@@ -46,6 +47,7 @@ class CrimeFragment : Fragment(), DatePickerFragment.Callbacks {
     private lateinit var solvedCheckBox : CheckBox
     private lateinit var sendCrimeReport: Button
     private lateinit var suspectButton: Button
+    private lateinit var callButton: Button
     private val crimeDetailViewModel : CrimeDetailViewModel by lazy {
         ViewModelProvider(this).get(CrimeDetailViewModel::class.java)
     }
@@ -69,6 +71,7 @@ class CrimeFragment : Fragment(), DatePickerFragment.Callbacks {
         titleField = view.findViewById(R.id.crime_title) as EditText
         dateButton = view.findViewById(R.id.crime_date) as Button
         solvedCheckBox = view.findViewById(R.id.crime_sloved) as CheckBox
+        callButton = view.findViewById(R.id.callCrimer)
 
         return view
     }
@@ -162,6 +165,14 @@ class CrimeFragment : Fragment(), DatePickerFragment.Callbacks {
 
         }
 
+        callButton.apply {
+            val pickContactIntent = Intent(Intent.ACTION_PICK, ContactsContract.CommonDataKinds.Phone.CONTENT_URI)
+            setOnClickListener {
+                startActivityForResult(pickContactIntent, REQUEST_PHONE )
+            }
+
+        }
+
 
 
     }
@@ -197,6 +208,22 @@ class CrimeFragment : Fragment(), DatePickerFragment.Callbacks {
                     suspectButton.text = suspect
                 }
 
+            }
+
+            requestCode == REQUEST_PHONE && data != null ->{
+                val contactUri: Uri? = data.data
+                val queryFields = arrayOf(ContactsContract.CommonDataKinds.Phone.NUMBER)
+                val cursor = requireActivity().contentResolver.query(contactUri!!, queryFields, null,null,null)
+                cursor?.use {
+                    if(it.count == 0){
+                        return
+                    }
+                    it.moveToFirst()
+                    val suspect = it.getString(0)
+                    crime.suspect = suspect
+                    crimeDetailViewModel.saveCrime(crime)
+                    callButton.text = suspect
+                }
             }
 
         }
