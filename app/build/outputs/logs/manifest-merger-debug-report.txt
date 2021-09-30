@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /home/dark_pass/AndroidStudioProjects/CriminalIntent/app/src/main/AndroidManifest.xml:2:1-23:12
-INJECTED from /home/dark_pass/AndroidStudioProjects/CriminalIntent/app/src/main/AndroidManifest.xml:2:1-23:12
-INJECTED from /home/dark_pass/AndroidStudioProjects/CriminalIntent/app/src/main/AndroidManifest.xml:2:1-23:12
-INJECTED from /home/dark_pass/AndroidStudioProjects/CriminalIntent/app/src/main/AndroidManifest.xml:2:1-23:12
+ADDED from /home/dark_pass/AndroidStudioProjects/CriminalIntent/app/src/main/AndroidManifest.xml:2:1-32:12
+INJECTED from /home/dark_pass/AndroidStudioProjects/CriminalIntent/app/src/main/AndroidManifest.xml:2:1-32:12
+INJECTED from /home/dark_pass/AndroidStudioProjects/CriminalIntent/app/src/main/AndroidManifest.xml:2:1-32:12
+INJECTED from /home/dark_pass/AndroidStudioProjects/CriminalIntent/app/src/main/AndroidManifest.xml:2:1-32:12
 MERGED from [androidx.core:core-ktx:1.6.0] /home/dark_pass/Android/Sdk/caches/transforms-2/files-2.1/143607dcd978c79d9a5943563222df7c/core-ktx-1.6.0/AndroidManifest.xml:2:1-9:12
 MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.0-alpha03] /home/dark_pass/Android/Sdk/caches/transforms-2/files-2.1/70e1f5514e4f4cf72b26f6d43f722325/lifecycle-viewmodel-ktx-2.4.0-alpha03/AndroidManifest.xml:17:1-24:12
 MERGED from [com.google.android.material:material:1.4.0] /home/dark_pass/Android/Sdk/caches/transforms-2/files-2.1/6b0be00ecfbc85e7ede5906157c6a0f7/material-1.4.0/AndroidManifest.xml:17:1-24:12
@@ -47,25 +47,25 @@ MERGED from [androidx.documentfile:documentfile:1.0.0] /home/dark_pass/Android/S
 MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /home/dark_pass/Android/Sdk/caches/transforms-2/files-2.1/39dc8d3fae4f3dbad514b70e0beae310/localbroadcastmanager-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.print:print:1.0.0] /home/dark_pass/Android/Sdk/caches/transforms-2/files-2.1/7dfca04f409b233eb5dcb1a0a2adbbdd/print-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.annotation:annotation-experimental:1.1.0] /home/dark_pass/Android/Sdk/caches/transforms-2/files-2.1/3bbc0092d7fdfd34a463006b78478970/annotation-experimental-1.1.0/AndroidManifest.xml:17:1-24:12
-INJECTED from /home/dark_pass/AndroidStudioProjects/CriminalIntent/app/src/main/AndroidManifest.xml:2:1-23:12
-INJECTED from /home/dark_pass/AndroidStudioProjects/CriminalIntent/app/src/main/AndroidManifest.xml:2:1-23:12
-INJECTED from /home/dark_pass/AndroidStudioProjects/CriminalIntent/app/src/main/AndroidManifest.xml:2:1-23:12
+INJECTED from /home/dark_pass/AndroidStudioProjects/CriminalIntent/app/src/main/AndroidManifest.xml:2:1-32:12
+INJECTED from /home/dark_pass/AndroidStudioProjects/CriminalIntent/app/src/main/AndroidManifest.xml:2:1-32:12
+INJECTED from /home/dark_pass/AndroidStudioProjects/CriminalIntent/app/src/main/AndroidManifest.xml:2:1-32:12
 	package
 		ADDED from /home/dark_pass/AndroidStudioProjects/CriminalIntent/app/src/main/AndroidManifest.xml:3:5-41
 		INJECTED from /home/dark_pass/AndroidStudioProjects/CriminalIntent/app/src/main/AndroidManifest.xml
 		INJECTED from /home/dark_pass/AndroidStudioProjects/CriminalIntent/app/src/main/AndroidManifest.xml
 	android:versionName
 		INJECTED from /home/dark_pass/AndroidStudioProjects/CriminalIntent/app/src/main/AndroidManifest.xml
-		ADDED from /home/dark_pass/AndroidStudioProjects/CriminalIntent/app/src/main/AndroidManifest.xml:2:1-23:12
+		ADDED from /home/dark_pass/AndroidStudioProjects/CriminalIntent/app/src/main/AndroidManifest.xml:2:1-32:12
 		INJECTED from /home/dark_pass/AndroidStudioProjects/CriminalIntent/app/src/main/AndroidManifest.xml
 	android:versionCode
 		INJECTED from /home/dark_pass/AndroidStudioProjects/CriminalIntent/app/src/main/AndroidManifest.xml
-		ADDED from /home/dark_pass/AndroidStudioProjects/CriminalIntent/app/src/main/AndroidManifest.xml:2:1-23:12
+		ADDED from /home/dark_pass/AndroidStudioProjects/CriminalIntent/app/src/main/AndroidManifest.xml:2:1-32:12
 		INJECTED from /home/dark_pass/AndroidStudioProjects/CriminalIntent/app/src/main/AndroidManifest.xml
 	xmlns:android
 		ADDED from /home/dark_pass/AndroidStudioProjects/CriminalIntent/app/src/main/AndroidManifest.xml:2:11-69
 application
-ADDED from /home/dark_pass/AndroidStudioProjects/CriminalIntent/app/src/main/AndroidManifest.xml:6:5-21:19
+ADDED from /home/dark_pass/AndroidStudioProjects/CriminalIntent/app/src/main/AndroidManifest.xml:6:5-30:19
 MERGED from [com.google.android.material:material:1.4.0] /home/dark_pass/Android/Sdk/caches/transforms-2/files-2.1/6b0be00ecfbc85e7ede5906157c6a0f7/material-1.4.0/AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.4.0] /home/dark_pass/Android/Sdk/caches/transforms-2/files-2.1/6b0be00ecfbc85e7ede5906157c6a0f7/material-1.4.0/AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.0] /home/dark_pass/Android/Sdk/caches/transforms-2/files-2.1/f1b0b43735abd561d5b9f16d0bc4e8c2/constraintlayout-2.1.0/AndroidManifest.xml:9:5-20
@@ -110,6 +110,22 @@ category#android.intent.category.LAUNCHER
 ADDED from /home/dark_pass/AndroidStudioProjects/CriminalIntent/app/src/main/AndroidManifest.xml:18:17-77
 	android:name
 		ADDED from /home/dark_pass/AndroidStudioProjects/CriminalIntent/app/src/main/AndroidManifest.xml:18:27-74
+provider#androidx.core.content.FileProvider
+ADDED from /home/dark_pass/AndroidStudioProjects/CriminalIntent/app/src/main/AndroidManifest.xml:21:9-28:20
+	android:grantUriPermissions
+		ADDED from /home/dark_pass/AndroidStudioProjects/CriminalIntent/app/src/main/AndroidManifest.xml:25:13-47
+	android:authorities
+		ADDED from /home/dark_pass/AndroidStudioProjects/CriminalIntent/app/src/main/AndroidManifest.xml:23:13-74
+	android:exported
+		ADDED from /home/dark_pass/AndroidStudioProjects/CriminalIntent/app/src/main/AndroidManifest.xml:24:13-37
+	android:name
+		ADDED from /home/dark_pass/AndroidStudioProjects/CriminalIntent/app/src/main/AndroidManifest.xml:22:13-62
+meta-data#android.support.FILE_PROVIDER_PATHS
+ADDED from /home/dark_pass/AndroidStudioProjects/CriminalIntent/app/src/main/AndroidManifest.xml:26:13-27:48
+	android:resource
+		ADDED from /home/dark_pass/AndroidStudioProjects/CriminalIntent/app/src/main/AndroidManifest.xml:27:17-46
+	android:name
+		ADDED from /home/dark_pass/AndroidStudioProjects/CriminalIntent/app/src/main/AndroidManifest.xml:26:24-74
 uses-sdk
 INJECTED from /home/dark_pass/AndroidStudioProjects/CriminalIntent/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /home/dark_pass/AndroidStudioProjects/CriminalIntent/app/src/main/AndroidManifest.xml

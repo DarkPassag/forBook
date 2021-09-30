@@ -8,17 +8,18 @@ import android.content.pm.ResolveInfo
 import android.net.Uri
 import android.os.Bundle
 import android.provider.ContactsContract
+import android.provider.MediaStore
 import android.text.Editable
 import android.text.TextWatcher
 import android.text.format.DateFormat
+import android.util.Log
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.CheckBox
-import android.widget.EditText
+import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.FileProvider
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import java.util.*
@@ -28,6 +29,7 @@ import com.example.criminalintent.ViewModels.CrimeDetailViewModel
 import com.example.criminalintent.Interfaces.DateSelected
 import com.example.criminalintent.Interfaces.TimeSelected
 import com.example.criminalintent.R
+import java.io.File
 import java.net.URI
 
 
@@ -37,6 +39,7 @@ private const val DIALOG_DATE = "DialogDate"
 private const val REQUEST_DATE = 0
 private const val REQUEST_CONTACT = 1
 private const val REQUEST_PHONE = 2
+private const val REQUEST_PHOTO = 3
 private const val DATE_FORMAT = "EEE, MM, dd"
 
 class CrimeFragment : Fragment(), DatePickerFragment.Callbacks {
@@ -48,6 +51,11 @@ class CrimeFragment : Fragment(), DatePickerFragment.Callbacks {
     private lateinit var sendCrimeReport: Button
     private lateinit var suspectButton: Button
     private lateinit var callButton: Button
+    private lateinit var imageCrime: ImageView
+    private lateinit var imageButton: ImageButton
+    private lateinit var photoFile: File
+    private lateinit var photoUri : Uri
+
     private val crimeDetailViewModel : CrimeDetailViewModel by lazy {
         ViewModelProvider(this).get(CrimeDetailViewModel::class.java)
     }
@@ -72,6 +80,9 @@ class CrimeFragment : Fragment(), DatePickerFragment.Callbacks {
         dateButton = view.findViewById(R.id.crime_date) as Button
         solvedCheckBox = view.findViewById(R.id.crime_sloved) as CheckBox
         callButton = view.findViewById(R.id.callCrimer)
+        imageButton = view.findViewById(R.id.crimeCamera)
+        imageCrime = view.findViewById(R.id.crimePhoto)
+
 
         return view
     }
@@ -85,6 +96,8 @@ class CrimeFragment : Fragment(), DatePickerFragment.Callbacks {
             Observer { crime ->
                 crime?.let {
                     this.crime = crime
+                    photoFile = crimeDetailViewModel.getPhotoFile(crime)
+                    photoUri = FileProvider.getUriForFile(requireActivity(),"com.example.criminalintent.fileprovider", photoFile)
                     updateUI()
                 }
             })
@@ -167,23 +180,34 @@ class CrimeFragment : Fragment(), DatePickerFragment.Callbacks {
 
         callButton.apply {
             val pickContactIntent = Intent(Intent.ACTION_PICK, ContactsContract.CommonDataKinds.Phone.CONTENT_URI)
-            val callIntent = Intent(Intent.ACTION_CALL, Uri.parse("tell: ${this.text}"))
+
+            val callIntent = Intent(Intent.ACTION_DIAL, Uri.parse(this.text.toString()))
 
             setOnClickListener {
                 if(callButton.text.contains("8") ){
+                    Log.d("TAG", callButton.text.toString())
                 startActivity(callIntent)
             }
                 else startActivityForResult(pickContactIntent, REQUEST_PHONE )
 
-//
-
-
-
             }
+        }
 
-
-
-
+        imageButton.apply {
+            val packageManager: PackageManager = requireActivity().packageManager
+            val captureImage = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
+            val resolvedActivity: ResolveInfo? = packageManager.resolveActivity(captureImage, PackageManager.MATCH_DEFAULT_ONLY)
+            if(resolvedActivity == null){
+                isEnabled = false
+            }
+            setOnClickListener{
+                captureImage.putExtra(MediaStore.EXTRA_OUTPUT, photoUri)
+                val cameraActivities : List<ResolveInfo> = packageManager.queryIntentActivities(captureImage,PackageManager.MATCH_DEFAULT_ONLY)
+                for(cameraActivity in cameraActivities){
+                    requireActivity().grantUriPermission(cameraActivity.activityInfo.packageName, photoUri, Intent.FLAG_GRANT_WRITE_URI_PERMISSION)
+                }
+                startActivityForResult(captureImage, REQUEST_PHOTO)
+            }
         }
 
 

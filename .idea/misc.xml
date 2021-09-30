@@ -5,12 +5,14 @@
       <map>
         <entry key="app/src/main/res/drawable/add_new_crime.xml" value="0.11481481481481481" />
         <entry key="app/src/main/res/drawable/ic_baseline_add_24.xml" value="0.11481481481481481" />
+        <entry key="app/src/main/res/drawable/ic_outline_photo_camera_24.xml" value="0.17395833333333333" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.32685185185185184" />
         <entry key="app/src/main/res/layout/fragment_crime.xml" value="0.35572916666666665" />
         <entry key="app/src/main/res/layout/fragment_crime_list.xml" value="0.25" />
         <entry key="app/src/main/res/layout/list_item_crime.xml" value="0.35572916666666665" />
         <entry key="app/src/main/res/layout/test_layout.xml" value="0.19427083333333334" />
         <entry key="app/src/main/res/menu/fragment_crime_list.xml" value="0.32685185185185184" />
+        <entry key="app/src/main/res/xml/files.xml" value="0.1578125" />
       </map>
     </option>
   </component>

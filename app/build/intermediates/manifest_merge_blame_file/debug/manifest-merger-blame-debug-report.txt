@@ -11,7 +11,7 @@
 9-->/home/dark_pass/AndroidStudioProjects/CriminalIntent/app/src/main/AndroidManifest.xml
 10
 11    <application
-11-->/home/dark_pass/AndroidStudioProjects/CriminalIntent/app/src/main/AndroidManifest.xml:6:5-21:19
+11-->/home/dark_pass/AndroidStudioProjects/CriminalIntent/app/src/main/AndroidManifest.xml:6:5-30:19
 12        android:name="com.example.criminalintent.CriminalIntentApplication"
 12-->/home/dark_pass/AndroidStudioProjects/CriminalIntent/app/src/main/AndroidManifest.xml:7:9-51
 13        android:allowBackup="true"
@@ -45,25 +45,43 @@
 27            </intent-filter>
 28        </activity>
 29
-30        <service
-30-->[androidx.room:room-runtime:2.4.0-alpha04] /home/dark_pass/Android/Sdk/caches/transforms-2/files-2.1/57e5e7c43fcfa31800fc0e8d49c33002/room-runtime-2.4.0-alpha04/AndroidManifest.xml:25:9-28:40
-31            android:name="androidx.room.MultiInstanceInvalidationService"
-31-->[androidx.room:room-runtime:2.4.0-alpha04] /home/dark_pass/Android/Sdk/caches/transforms-2/files-2.1/57e5e7c43fcfa31800fc0e8d49c33002/room-runtime-2.4.0-alpha04/AndroidManifest.xml:26:13-74
-32            android:directBootAware="true"
-32-->[androidx.room:room-runtime:2.4.0-alpha04] /home/dark_pass/Android/Sdk/caches/transforms-2/files-2.1/57e5e7c43fcfa31800fc0e8d49c33002/room-runtime-2.4.0-alpha04/AndroidManifest.xml:27:13-43
-33            android:exported="false" />
-33-->[androidx.room:room-runtime:2.4.0-alpha04] /home/dark_pass/Android/Sdk/caches/transforms-2/files-2.1/57e5e7c43fcfa31800fc0e8d49c33002/room-runtime-2.4.0-alpha04/AndroidManifest.xml:28:13-37
-34
-35        <provider
-35-->[androidx.lifecycle:lifecycle-process:2.2.0] /home/dark_pass/Android/Sdk/caches/transforms-2/files-2.1/6407ed0f07fce8bf0636edc4d8285da9/lifecycle-process-2.2.0/AndroidManifest.xml:25:9-29:43
-36            android:name="androidx.lifecycle.ProcessLifecycleOwnerInitializer"
-36-->[androidx.lifecycle:lifecycle-process:2.2.0] /home/dark_pass/Android/Sdk/caches/transforms-2/files-2.1/6407ed0f07fce8bf0636edc4d8285da9/lifecycle-process-2.2.0/AndroidManifest.xml:26:13-79
-37            android:authorities="com.example.criminalintent.lifecycle-process"
-37-->[androidx.lifecycle:lifecycle-process:2.2.0] /home/dark_pass/Android/Sdk/caches/transforms-2/files-2.1/6407ed0f07fce8bf0636edc4d8285da9/lifecycle-process-2.2.0/AndroidManifest.xml:27:13-69
-38            android:exported="false"
-38-->[androidx.lifecycle:lifecycle-process:2.2.0] /home/dark_pass/Android/Sdk/caches/transforms-2/files-2.1/6407ed0f07fce8bf0636edc4d8285da9/lifecycle-process-2.2.0/AndroidManifest.xml:28:13-37
-39            android:multiprocess="true" />
-39-->[androidx.lifecycle:lifecycle-process:2.2.0] /home/dark_pass/Android/Sdk/caches/transforms-2/files-2.1/6407ed0f07fce8bf0636edc4d8285da9/lifecycle-process-2.2.0/AndroidManifest.xml:29:13-40
-40    </application>
-41
-42</manifest>
+30        <provider
+30-->/home/dark_pass/AndroidStudioProjects/CriminalIntent/app/src/main/AndroidManifest.xml:21:9-28:20
+31            android:name="androidx.core.content.FileProvider"
+31-->/home/dark_pass/AndroidStudioProjects/CriminalIntent/app/src/main/AndroidManifest.xml:22:13-62
+32            android:authorities="com.example.criminalintent.fileprovider"
+32-->/home/dark_pass/AndroidStudioProjects/CriminalIntent/app/src/main/AndroidManifest.xml:23:13-74
+33            android:exported="false"
+33-->/home/dark_pass/AndroidStudioProjects/CriminalIntent/app/src/main/AndroidManifest.xml:24:13-37
+34            android:grantUriPermissions="true" >
+34-->/home/dark_pass/AndroidStudioProjects/CriminalIntent/app/src/main/AndroidManifest.xml:25:13-47
+35            <meta-data
+35-->/home/dark_pass/AndroidStudioProjects/CriminalIntent/app/src/main/AndroidManifest.xml:26:13-27:48
+36                android:name="android.support.FILE_PROVIDER_PATHS"
+36-->/home/dark_pass/AndroidStudioProjects/CriminalIntent/app/src/main/AndroidManifest.xml:26:24-74
+37                android:resource="@xml/files" />
+37-->/home/dark_pass/AndroidStudioProjects/CriminalIntent/app/src/main/AndroidManifest.xml:27:17-46
+38        </provider>
+39
+40        <service
+40-->[androidx.room:room-runtime:2.4.0-alpha04] /home/dark_pass/Android/Sdk/caches/transforms-2/files-2.1/57e5e7c43fcfa31800fc0e8d49c33002/room-runtime-2.4.0-alpha04/AndroidManifest.xml:25:9-28:40
+41            android:name="androidx.room.MultiInstanceInvalidationService"
+41-->[androidx.room:room-runtime:2.4.0-alpha04] /home/dark_pass/Android/Sdk/caches/transforms-2/files-2.1/57e5e7c43fcfa31800fc0e8d49c33002/room-runtime-2.4.0-alpha04/AndroidManifest.xml:26:13-74
+42            android:directBootAware="true"
+42-->[androidx.room:room-runtime:2.4.0-alpha04] /home/dark_pass/Android/Sdk/caches/transforms-2/files-2.1/57e5e7c43fcfa31800fc0e8d49c33002/room-runtime-2.4.0-alpha04/AndroidManifest.xml:27:13-43
+43            android:exported="false" />
+43-->[androidx.room:room-runtime:2.4.0-alpha04] /home/dark_pass/Android/Sdk/caches/transforms-2/files-2.1/57e5e7c43fcfa31800fc0e8d49c33002/room-runtime-2.4.0-alpha04/AndroidManifest.xml:28:13-37
+44
+45        <provider
+45-->[androidx.lifecycle:lifecycle-process:2.2.0] /home/dark_pass/Android/Sdk/caches/transforms-2/files-2.1/6407ed0f07fce8bf0636edc4d8285da9/lifecycle-process-2.2.0/AndroidManifest.xml:25:9-29:43
+46            android:name="androidx.lifecycle.ProcessLifecycleOwnerInitializer"
+46-->[androidx.lifecycle:lifecycle-process:2.2.0] /home/dark_pass/Android/Sdk/caches/transforms-2/files-2.1/6407ed0f07fce8bf0636edc4d8285da9/lifecycle-process-2.2.0/AndroidManifest.xml:26:13-79
+47            android:authorities="com.example.criminalintent.lifecycle-process"
+47-->[androidx.lifecycle:lifecycle-process:2.2.0] /home/dark_pass/Android/Sdk/caches/transforms-2/files-2.1/6407ed0f07fce8bf0636edc4d8285da9/lifecycle-process-2.2.0/AndroidManifest.xml:27:13-69
+48            android:exported="false"
+48-->[androidx.lifecycle:lifecycle-process:2.2.0] /home/dark_pass/Android/Sdk/caches/transforms-2/files-2.1/6407ed0f07fce8bf0636edc4d8285da9/lifecycle-process-2.2.0/AndroidManifest.xml:28:13-37
+49            android:multiprocess="true" />
+49-->[androidx.lifecycle:lifecycle-process:2.2.0] /home/dark_pass/Android/Sdk/caches/transforms-2/files-2.1/6407ed0f07fce8bf0636edc4d8285da9/lifecycle-process-2.2.0/AndroidManifest.xml:29:13-40
+50    </application>
+51
+52</manifest>
